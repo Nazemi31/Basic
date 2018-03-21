@@ -44,8 +44,8 @@ INPUT "Enter the port number", port, 1080
 
 SOCKET.MYIP ip$
 PRINT "LAN IP: " + ip$
-GRABURL ip$, "http://automation.whatismyip.com/n09230945.asp"
-PRINT "WAN IP: " + ip$
+GRABURL ip$, "http://goo.gl/jpy7A4":ip$= MID$(ip$, 17)
+PRINT "WAN IP: " + LEFT$(ip$, LEN(ip$)-2)
 
 ! Create the server on the specified port
 SOCKET.SERVER.CREATE port
